@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   # post 'doses/', to: 'doses#create', as: 'post_dose'
 
   resources :cocktails do
-    resources :doses
+    resources :doses, only: [ :new, :create ]
   end
+
+  resources :doses, only: [:destroy]
+
+  # delete '/doses/:id', to: 'doses#destroy', as: 'dose_delete'
 
   # resources :ingredients do
   #   resources :doses

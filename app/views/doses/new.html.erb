@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Doses#new</h1>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
   <%= f.submit "add ingredient", class: "btn btn-primary" %>
   <% end %>
 </div>
